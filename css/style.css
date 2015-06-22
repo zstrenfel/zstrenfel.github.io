@@ -162,6 +162,30 @@
  */
 /* Mixins */
 /* Variables */
+/*WIP*/
+#WIP {
+  height: 100vh;
+  width: 100%; }
+  #WIP .container {
+    width: auto;
+    max-width: 600;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    clear: both;
+    overflow: auto; }
+    #WIP .container h1 {
+      margin-left: 0;
+      font-size: 150px; }
+
 /* General CSS */
 html, body {
   margin: 0;
@@ -296,7 +320,6 @@ img {
   margin-left: auto;
   padding-left: 0;
   padding-right: 0;
-  visibility: hidden;
   border-bottom: 1px solid #D2D2D2;
   margin-bottom: 20px; }
 

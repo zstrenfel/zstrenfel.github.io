@@ -25,6 +25,26 @@ $mobile: 100px 700px;
 $accent-orange: #FA6900;
 $light-grey: #D2D2D2;
 
+/*WIP*/
+#WIP {
+	height:100vh;
+	width:100%;
+
+	.container {
+		@include center(600);
+		@include vertical-align;
+		clear:both;
+		overflow: auto;
+
+		h1 {
+			margin-left: 0;
+			font-size: 150px;
+		}
+	}
+
+}
+
+
 /* General CSS */
 html, body {
 	margin: 0;
@@ -131,7 +151,6 @@ img { width: 100%; }
 
 .divider-line {
 	@include center(90%);
-	visibility: hidden;
 	border-bottom: 1px solid $light-grey;
 	margin-bottom:20px;
 }
