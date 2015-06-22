@@ -1,0 +1,481 @@
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Perform a value into a percentage value.
+ * @param {number} $value - The value which should be converted.
+ * @returns {number} $value - The percentage.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Aliases for j-column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Aliases for j-column-width().
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Alias for j-column-gutter().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Alias for j-span().
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Alias for j-shift().
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * Alias for j-unshift().
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ * Aliases for j-edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Alias for j-center().
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Alias for j-uncenter().
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Alias for j-stack().
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Alias for j-unstack().
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Alias for j-align().
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+/**
+ * Alias for j-cf().
+ */
+/* Mixins */
+/* Variables */
+/* General CSS */
+html, body {
+  margin: 0;
+  padding: 0; }
+
+body {
+  font-family: 'Open Sans',Helvetica, sans-serif;
+  font-size: 12px;
+  line-height: 12px; }
+
+.wrapper {
+  height: 100%; }
+  .wrapper footer {
+    position: absolute; }
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0.5em;
+  display: block;
+  clear: both; }
+
+h1 {
+  font-family: Helvetica;
+  font-size: 5em;
+  color: #FA6900; }
+  @media (min-width: 100px) and (max-width: 700px) {
+    h1 {
+      font-size: 40px; } }
+
+h2 {
+  font-size: 2em; }
+
+h3 {
+  font-size: 1.5em; }
+
+p {
+  font-size: 14px;
+  line-height: 1.25em;
+  color: #585858; }
+
+button {
+  border-radius: 0;
+  border: 1px solid #D2D2D2;
+  background-color: white;
+  color: #D2D2D2;
+  letter-spacing: 2px;
+  font-size: 10px; }
+  button .center {
+    width: auto;
+    max-width: 1410px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+
+button:hover {
+  background-color: #D2D2D2;
+  color: white; }
+
+.emphasis {
+  font-family: Helvetica;
+  font-weight: bold; }
+
+.no-emphasis {
+  text-align: right;
+  font-weight: normal;
+  color: #585858; }
+
+.section {
+  width: auto;
+  max-width: 95%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 10px;
+  position: relative;
+  overflow: hidden; }
+
+.half-container {
+  float: left;
+  clear: none;
+  width: 48.5%;
+  margin-left: 0;
+  margin-right: 3%;
+  overflow: hidden; }
+  .half-container:last-child {
+    margin-right: 0; }
+
+.main-content {
+  width: auto;
+  max-width: 1410px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+.vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%); }
+
+img {
+  width: 100%; }
+
+.link {
+  margin-top: 0;
+  text-align: right; }
+  @media (min-width: 100px) and (max-width: 700px) {
+    .link {
+      font-size: 18px;
+      text-align: center; } }
+
+.divider-line {
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  visibility: hidden;
+  border-bottom: 1px solid #D2D2D2;
+  margin-bottom: 20px; }
+
+.divider-line-hidden {
+  width: auto;
+  max-width: 90%;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  visibility: hidden;
+  border-bottom: 1px solid #D2D2D2;
+  margin-bottom: 20px; }
+  @media (min-width: 100px) and (max-width: 700px) {
+    .divider-line-hidden {
+      visibility: visible; } }
+
+.sub-menu-link {
+  text-align: right;
+  text-decoration: none;
+  line-height: 30px;
+  padding-right: 10px;
+  color: #D2D2D2; }
+
+.sub-menu-link:hover {
+  color: black; }
+
+/* Splash Specific Styles */
+.intro {
+  height: 90vh;
+  text-align: right; }
+  .intro .profile-img {
+    position: relative;
+    left: 51.5%; }
+    @media (min-width: 100px) and (max-width: 700px) {
+      .intro .profile-img {
+        position: static;
+        left: 0; } }
+  .intro .profile-text {
+    position: relative;
+    left: -51.5%; }
+    @media (min-width: 100px) and (max-width: 700px) {
+      .intro .profile-text {
+        position: static;
+        left: 0; } }
+  @media (min-width: 100px) and (max-width: 700px) {
+    .intro {
+      height: auto;
+      margin-bottom: 20px; } }
+  @media (min-width: 100px) and (max-width: 700px) {
+    .intro .half-container {
+      display: block;
+      clear: both;
+      float: none;
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      top: 0;
+      -webkit-transform: none;
+      -ms-transform: none;
+      transform: none; }
+      .intro .half-container:first-child {
+        margin-left: auto; }
+      .intro .half-container:last-child {
+        margin-right: auto; } }
+
+.button-wrapper {
+  width: auto;
+  max-width: 500px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  height: 10vh;
+  text-align: center;
+  padding: 0; }
+  .button-wrapper button {
+    color: #D2D2D2;
+    border-color: #D2D2D2;
+    font-size: 12px;
+    margin: 10px; }
+  .button-wrapper button:hover {
+    background-color: #D2D2D2;
+    color: white; }
+
+/* Work Specific CSS */
+@media (min-width: 100px) and (max-width: 700px) and (min-width: 100px) and (max-width: 700px) {
+  .gallery-wrapper .half-container {
+    display: block;
+    clear: both;
+    float: none;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px; }
+    .gallery-wrapper .half-container:first-child {
+      margin-left: auto; }
+    .gallery-wrapper .half-container:last-child {
+      margin-right: auto; } }
+
+@media (min-width: 100px) and (max-width: 700px) {
+  .gallery-wrapper .gallery {
+    margin-bottom: 0; } }
+.gallery-wrapper .gallery img {
+  float: left;
+  clear: none;
+  width: 46.90722%;
+  margin-left: 0;
+  margin-right: 6.18557%;
+  margin-bottom: 20px; }
+  .gallery-wrapper .gallery img:nth-of-type(2n) {
+    margin-right: 0;
+    float: right; }
+  .gallery-wrapper .gallery img:nth-of-type(2n + 1) {
+    clear: both; }
+
+/* Contact Specific CSS */
+.contact-info {
+  width: auto;
+  max-width: 500;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  margin-bottom: 20px; }
+  .contact-info ul {
+    list-style-type: none;
+    text-align: center; }
+    .contact-info ul li {
+      display: inline;
+      padding-right: 15px; }
+  .contact-info img {
+    height: 50px;
+    width: 50px; }
+
+/* Footer Styles */
+footer {
+  float: left;
+  clear: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  height: 40px;
+  background-color: #FA6900;
+  bottom: 0; }
+
+/** Work page Specific Styles */
+.header {
+  float: left;
+  clear: none;
+  width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  height: 35px;
+  border-bottom: 1px solid #D2D2D2;
+  border-left: 6px solid #FA6900;
+  top: 0;
+  display: inline-block; }
+  .header h2 {
+    padding: 0;
+    margin: 0 0 0 10px;
+    line-height: 30px; }
+  .header ul {
+    position: relative;
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
+    padding-top: 10px;
+    list-style-type: none;
+    text-align: right;
+    padding-right: 20px; }
+    .header ul li {
+      display: inline; }
+
+/*# sourceMappingURL=style.css.map */

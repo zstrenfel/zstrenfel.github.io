@@ -1,0 +1,314 @@
+@import '../jeet/index';
+@import "../bower_components/breakpoint-sass/stylesheets/breakpoint";
+// @include edit();
+
+
+
+/* Mixins */
+@mixin vertical-align {
+  position: relative;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+@mixin no-vert {
+		top: 0;
+		-webkit-transform: none;
+		-ms-transform: none;
+		transform: none;
+}
+
+/* Variables */
+$mobile: 100px 700px;
+$accent-orange: #FA6900;
+$light-grey: #D2D2D2;
+
+/* General CSS */
+html, body {
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	font-family: 'Open Sans',Helvetica, sans-serif;
+	font-size: 12px;
+	line-height: 12px;
+}
+
+.wrapper {
+	height: 100%;
+
+	footer {
+		position: absolute;
+	}
+}
+
+h1,h2,h3,h4,h5,h6,p {
+	margin: 0.5em;
+	display:block;
+	clear:both;
+}
+
+
+h1 {
+	font-family: Helvetica;
+	font-size: 5em;
+	// line-height:.8em;
+	color: $accent-orange;
+
+	@include breakpoint($mobile) {
+		font-size: 40px;
+	}
+}
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+
+p {
+	font-size: 14px;
+	line-height:1.25em;
+	color:#585858;
+}
+button {
+	border-radius: 0;
+	border: 1px solid $light-grey;
+	background-color: white;
+	color: $light-grey;
+	letter-spacing: 2px;
+	font-size: 10px;
+
+	.center {
+		@include center();
+	}
+}
+
+button:hover {
+	background-color: $light-grey;
+	color: white;
+}
+
+.emphasis {
+	font-family: Helvetica;
+	font-weight: bold;
+}
+.no-emphasis {
+	text-align: right;
+	font-weight: normal;
+	color:#585858;
+}
+
+
+.section {
+	@include center(95%);
+	margin-top:10px;
+	position:relative;
+	overflow:hidden;
+}
+
+.half-container {
+	@include column(1/2);
+	overflow: hidden;
+}
+
+.main-content {
+	@include center();
+	@include vertical-align;
+}
+.vertical-align { @include vertical-align; }
+
+img { width: 100%; }
+
+.link {
+	margin-top: 0;
+	text-align: right;
+
+	@include breakpoint($mobile) {
+		font-size: 18px;
+		text-align: center;
+	}
+}
+
+.divider-line {
+	@include center(90%);
+	visibility: hidden;
+	border-bottom: 1px solid $light-grey;
+	margin-bottom:20px;
+}
+
+.divider-line-hidden {
+	@include center(90%);
+	visibility: hidden;
+	border-bottom: 1px solid $light-grey;
+	margin-bottom:20px;
+
+	@include breakpoint($mobile) {
+		visibility: visible;
+	}
+}
+
+.sub-menu-link {
+	text-align: right;
+	text-decoration:none;
+	line-height:30px;
+	padding-right: 10px;
+	color: $light-grey;
+}
+
+.sub-menu-link:hover { color:black; }
+
+/* Splash Specific Styles */
+.intro{
+	height: 90vh;
+	text-align: right;
+
+	.profile-img {
+		@include shift(1/2);
+
+		@include breakpoint($mobile) {
+			@include unshift();
+		}
+	}
+
+	.profile-text {
+		@include shift(-1/2);
+
+		@include breakpoint($mobile) {
+			@include unshift();
+		}
+	}
+
+	@include breakpoint($mobile) {
+		height: auto;
+		margin-bottom: 20px;
+	}
+
+	.half-container {
+		@include breakpoint($mobile) {
+			@include stack();
+			@include no-vert;
+		}
+	}
+}
+
+.button-wrapper {
+	@include center(500px);
+	height: 10vh;
+	text-align: center;
+	padding: 0;
+
+	button {
+		color: $light-grey;
+		border-color: $light-grey;
+		font-size:12px;
+		margin:10px;
+	}
+
+	button:hover {
+		background-color: $light-grey;
+		color: white;
+	}
+}
+
+
+/* Work Specific CSS */
+.gallery-wrapper {
+
+	@include breakpoint($mobile) {
+	}
+
+	.half-container {
+		@include breakpoint($mobile) {
+			@include breakpoint($mobile) {
+			@include stack();
+
+			margin-bottom: 20px;
+		}
+
+		}
+	}
+
+	.gallery {
+		@include breakpoint($mobile) {
+			margin-bottom: 0;
+		}
+
+		img {
+			@include col(1/2 1/2, 0, 2);
+			margin-bottom: 20px;
+		}
+	}
+
+}
+
+
+
+/* Contact Specific CSS */
+.contact-info {
+	@include center(500);
+
+	margin-bottom: 20px;
+
+	ul {
+		list-style-type: none;
+		text-align: center;
+
+		li {
+			display: inline;
+			padding-right: 15px;
+		}
+	}
+
+	img {
+		height: 50px;
+		width: 50px;
+	}
+}
+
+/* Footer Styles */
+footer {
+	@include span();
+
+	height: 40px;
+	background-color:$accent-orange;
+	bottom: 0;
+}
+
+/** Work page Specific Styles */
+.header {
+	@include span();
+
+	height: 35px;
+	border-bottom: 1px solid $light-grey;
+	border-left: 6px solid $accent-orange;
+	top:0;
+	display: inline-block;
+
+	h2 {
+		padding:0;
+		margin: 0 0 0 10px;
+		line-height: 30px;
+	}
+
+	ul {
+		@include vertical-align;
+		padding-top: 10px;
+		list-style-type: none;
+		text-align: right;
+		padding-right: 20px;
+
+		li {
+			display: inline;
+		}
+	}
+
+
+
+}
+
+
+
+
+
+
+
