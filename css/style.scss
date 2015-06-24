@@ -44,14 +44,13 @@ $light-grey: #D2D2D2;
 
 }
 
-
 /* General CSS */
 html, body {
 	margin: 0;
 	padding: 0;
 }
 
-body{
+body {
 	font-family: 'Open Sans',Helvetica, sans-serif;
 	font-size: 12px;
 	line-height: 12px;
@@ -90,20 +89,24 @@ p {
 	line-height:1.25em;
 	color:#585858;
 }
-button {
+
+.btn {
 	border-radius: 0;
 	border: 1px solid $light-grey;
 	background-color: white;
 	color: $light-grey;
 	letter-spacing: 2px;
 	font-size: 10px;
+	text-decoration:none;
+	margin:0 10px;
+	padding:3px;
 
 	.center {
 		@include center();
 	}
 }
 
-button:hover {
+.btn:hover {
 	background-color: $light-grey;
 	color: white;
 }
@@ -122,6 +125,7 @@ button:hover {
 .section {
 	@include center(95%);
 	margin-top:10px;
+	margin-bottom:10px;
 	position:relative;
 	overflow:hidden;
 }
@@ -135,13 +139,16 @@ button:hover {
 	@include center();
 	@include vertical-align;
 }
+
 .vertical-align { @include vertical-align; }
 
 img { width: 100%; }
 
 .link {
+	// height:25px;
 	margin-top: 0;
 	text-align: right;
+	padding:5px;
 
 	@include breakpoint($mobile) {
 		font-size: 18px;
@@ -152,7 +159,7 @@ img { width: 100%; }
 .divider-line {
 	@include center(90%);
 	border-bottom: 1px solid $light-grey;
-	margin-bottom:20px;
+	margin:15px auto;
 }
 
 .divider-line-hidden {
@@ -233,6 +240,7 @@ img { width: 100%; }
 /* Work Specific CSS */
 .gallery-wrapper {
 
+	margin-bottom:0px;
 	@include breakpoint($mobile) {
 	}
 
@@ -297,21 +305,22 @@ footer {
 .header {
 	@include span();
 
-	height: 35px;
-	border-bottom: 1px solid $light-grey;
+	height: 40px;
+	border-bottom: 1px solid #FAFAFA;
 	border-left: 6px solid $accent-orange;
 	top:0;
 	display: inline-block;
+	float:none;
 
 	h2 {
 		padding:0;
 		margin: 0 0 0 10px;
-		line-height: 30px;
+		line-height: 40px;
 	}
 
 	ul {
 		@include vertical-align;
-		padding-top: 10px;
+		padding-top: 20px;
 		list-style-type: none;
 		text-align: right;
 		padding-right: 20px;

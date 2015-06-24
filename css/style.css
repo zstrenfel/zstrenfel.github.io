@@ -225,14 +225,17 @@ p {
   line-height: 1.25em;
   color: #585858; }
 
-button {
+.btn {
   border-radius: 0;
   border: 1px solid #D2D2D2;
   background-color: white;
   color: #D2D2D2;
   letter-spacing: 2px;
-  font-size: 10px; }
-  button .center {
+  font-size: 10px;
+  text-decoration: none;
+  margin: 0 10px;
+  padding: 3px; }
+  .btn .center {
     width: auto;
     max-width: 1410px;
     float: none;
@@ -242,7 +245,7 @@ button {
     padding-left: 0;
     padding-right: 0; }
 
-button:hover {
+.btn:hover {
   background-color: #D2D2D2;
   color: white; }
 
@@ -265,6 +268,7 @@ button:hover {
   padding-left: 0;
   padding-right: 0;
   margin-top: 10px;
+  margin-bottom: 10px;
   position: relative;
   overflow: hidden; }
 
@@ -305,7 +309,8 @@ img {
 
 .link {
   margin-top: 0;
-  text-align: right; }
+  text-align: right;
+  padding: 5px; }
   @media (min-width: 100px) and (max-width: 700px) {
     .link {
       font-size: 18px;
@@ -321,7 +326,7 @@ img {
   padding-left: 0;
   padding-right: 0;
   border-bottom: 1px solid #D2D2D2;
-  margin-bottom: 20px; }
+  margin: 15px auto; }
 
 .divider-line-hidden {
   width: auto;
@@ -410,6 +415,8 @@ img {
     color: white; }
 
 /* Work Specific CSS */
+.gallery-wrapper {
+  margin-bottom: 0px; }
 @media (min-width: 100px) and (max-width: 700px) and (min-width: 100px) and (max-width: 700px) {
   .gallery-wrapper .half-container {
     display: block;
@@ -424,21 +431,21 @@ img {
     .gallery-wrapper .half-container:last-child {
       margin-right: auto; } }
 
-@media (min-width: 100px) and (max-width: 700px) {
-  .gallery-wrapper .gallery {
-    margin-bottom: 0; } }
-.gallery-wrapper .gallery img {
-  float: left;
-  clear: none;
-  width: 46.90722%;
-  margin-left: 0;
-  margin-right: 6.18557%;
-  margin-bottom: 20px; }
-  .gallery-wrapper .gallery img:nth-of-type(2n) {
-    margin-right: 0;
-    float: right; }
-  .gallery-wrapper .gallery img:nth-of-type(2n + 1) {
-    clear: both; }
+  @media (min-width: 100px) and (max-width: 700px) {
+    .gallery-wrapper .gallery {
+      margin-bottom: 0; } }
+  .gallery-wrapper .gallery img {
+    float: left;
+    clear: none;
+    width: 46.90722%;
+    margin-left: 0;
+    margin-right: 6.18557%;
+    margin-bottom: 20px; }
+    .gallery-wrapper .gallery img:nth-of-type(2n) {
+      margin-right: 0;
+      float: right; }
+    .gallery-wrapper .gallery img:nth-of-type(2n + 1) {
+      clear: both; }
 
 /* Contact Specific CSS */
 .contact-info {
@@ -479,22 +486,23 @@ footer {
   width: 100%;
   margin-left: 0;
   margin-right: 0;
-  height: 35px;
-  border-bottom: 1px solid #D2D2D2;
+  height: 40px;
+  border-bottom: 1px solid #FAFAFA;
   border-left: 6px solid #FA6900;
   top: 0;
-  display: inline-block; }
+  display: inline-block;
+  float: none; }
   .header h2 {
     padding: 0;
     margin: 0 0 0 10px;
-    line-height: 30px; }
+    line-height: 40px; }
   .header ul {
     position: relative;
     top: 50%;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
-    padding-top: 10px;
+    padding-top: 20px;
     list-style-type: none;
     text-align: right;
     padding-right: 20px; }
